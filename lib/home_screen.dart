@@ -26,7 +26,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 515, 0, 0),
               child: Image.asset(
-                'assets/images/Home_Screen/BG.png',
+                'assets/images/Home_Screen/BG_Home.png',
                 width: double.infinity,
                 height: double.infinity,
                 fit: BoxFit.cover,

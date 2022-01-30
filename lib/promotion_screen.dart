@@ -162,7 +162,7 @@ class _PromotionScreenWidgetState extends State<PromotionScreenWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(210, 640, 0, 0),
             child: Image.asset(
-              'assets/images/BG_Promotion.png',
+              'assets/images/Promotion_Screen/BG_Promotion.png',
               width: 200,
               height: 200,
               fit: BoxFit.cover,
