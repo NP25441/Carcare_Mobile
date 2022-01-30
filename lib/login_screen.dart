@@ -1,8 +1,11 @@
+import 'package:carcare/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
 import 'flutter flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'home_screen.dart';
 
 class LoginScreenWidget extends StatefulWidget {
   const LoginScreenWidget({Key? key}) : super(key: key);
@@ -247,9 +250,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(220, 0, 0, 0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button-ForgotPassword pressed ...');
-                          },
+                          onPressed: () {},
                           text: 'ลืมรหัสผ่าน',
                           options: FFButtonOptions(
                             width: 100,
@@ -276,9 +277,11 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button-Login pressed ...');
-                    },
+                    onPressed: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreenWidget()),
+                          );},
                     text: 'เข้าสู่ระบบ',
                     options: FFButtonOptions(
                       width: 250,
@@ -316,11 +319,15 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                       ),
                       FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegisterScreenWidget()),
+                          );
                         },
-                        text: 'สมัคสมาชิก',
+                        text: 'สมัครสมาชิก',
                         options: FFButtonOptions(
-                          width: 110,
+                          width: 130,
                           height: 30,
                           color: Color(0x00FFFFFF),
                           textStyle: FlutterFlowTheme.subtitle2.override(

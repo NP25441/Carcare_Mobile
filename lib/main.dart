@@ -3,6 +3,7 @@ import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
 import 'flutter flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -39,6 +39,17 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _navigatetologin_screen();
+  }
+
+  _navigatetologin_screen() async {
+    await Future.delayed(Duration(milliseconds: 1500),() {});
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreenWidget()));
   }
 
   @override
