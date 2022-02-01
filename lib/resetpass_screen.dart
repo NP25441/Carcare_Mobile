@@ -1,3 +1,4 @@
+import 'package:carcare/resetpass_success_screen.dart';
 import 'package:flutter/material.dart';
 import '../flutter flow/flutter_flow_util.dart';
 import '../flutter flow/flutter_flow_widgets.dart';
@@ -145,10 +146,12 @@ class _PassScreenWidgetState extends State<PassScreenWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
-                        },
-                        text: 'ยืนยันการสมัครสมาชิก',
+                        onPressed: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PassSuccessScreenWidget()),
+                          );},
+                        text: 'ส่งไปยัง email',
                         options: FFButtonOptions(
                           width: 178,
                           height: 39,

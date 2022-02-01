@@ -1,3 +1,4 @@
+import 'package:carcare/home_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'flutter flow/flutter_flow_util.dart';
@@ -72,7 +73,7 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                   child: Text(
                     'Create account',
                     style: FlutterFlowTheme.bodyText1.override(
@@ -549,7 +550,11 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreenWidget()),
+                          );
                         },
                         text: 'ยืนยันการสมัครสมาชิก',
                         options: FFButtonOptions(

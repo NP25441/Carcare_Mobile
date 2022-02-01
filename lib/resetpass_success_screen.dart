@@ -1,3 +1,4 @@
+import 'package:carcare/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
@@ -65,13 +66,17 @@ class _PassSuccessScreenWidgetState extends State<PassSuccessScreenWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () {
-                          print('Button pressed ...');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreenWidget()),
+                          );
                         },
                         text: 'แตะหน้าจอเพื่อดำเนินการต่อ',
                         options: FFButtonOptions(
                           width: 220,
                           height: 30,
-                          color: Color(0x003474E0),
+                          color: Colors.transparent,
                           textStyle: FlutterFlowTheme.subtitle2.override(
                             fontFamily: 'Roboto',
                             color: Color(0xFFB0B4BD),

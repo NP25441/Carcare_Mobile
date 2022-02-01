@@ -1,4 +1,5 @@
 import 'package:carcare/register_screen.dart';
+import 'package:carcare/resetpass_screen.dart';
 import 'package:flutter/material.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
@@ -250,7 +251,11 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(220, 0, 0, 0),
                         child: FFButtonWidget(
-                          onPressed: () {},
+                          onPressed: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PassScreenWidget()),
+                          );},
                           text: 'ลืมรหัสผ่าน',
                           options: FFButtonOptions(
                             width: 100,
@@ -303,7 +308,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 200, 0, 24),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 160, 0, 24),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
