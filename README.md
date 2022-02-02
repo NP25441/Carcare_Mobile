@@ -23,3 +23,10 @@ test
 - เชื่อม Login Screen กับ Reset Password Screen
 - เชื่อม Reset Password Screen กับ Reset Password Success Screen
 - เชื่อม Reset Password Success Screen กับ Home Screen
+
+3.2
+- เชื่อม Promotion Screen กับ Home Screen
+- เชื่อมปุ่ม Back ของหน้า Register Screen กับ Login Screen
+- เชื่อมปุ่ม Back ของหน้า Reset Password Screen กับ Login Screen
+- เชื่อมปุ่ม Back ของหน้า Promotion Screen กับ Home Screen
+- แก้บัคปุ่มหน้า Reset Password Success Screen 
