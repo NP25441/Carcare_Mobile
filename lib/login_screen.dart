@@ -251,11 +251,13 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(220, 0, 0, 0),
                         child: FFButtonWidget(
-                          onPressed: () {Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => PassScreenWidget()),
-                          );},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PassScreenWidget()),
+                            );
+                          },
                           text: 'ลืมรหัสผ่าน',
                           options: FFButtonOptions(
                             width: 100,
@@ -282,11 +284,13 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: FFButtonWidget(
-                    onPressed: () {Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeScreenWidget()),
-                          );},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HomeScreenWidget()),
+                      );
+                    },
                     text: 'เข้าสู่ระบบ',
                     options: FFButtonOptions(
                       width: 250,

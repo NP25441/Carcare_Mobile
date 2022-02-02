@@ -1,3 +1,4 @@
+import 'package:carcare/promotion_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'flutter flow/flutter_flow_util.dart';
@@ -40,11 +41,20 @@ class _DetelProScreenWidgetState extends State<DetelProScreenWidget> {
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Image.asset(
-                        'assets/images/Back.png',
-                        width: 23,
-                        height: 14,
-                        fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PromotionScreenWidget()),
+                          );
+                        },
+                        child: Image.asset(
+                          'assets/images/Back.png',
+                          width: 23,
+                          height: 14,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ],
                   ),

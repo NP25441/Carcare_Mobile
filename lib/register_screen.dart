@@ -1,4 +1,5 @@
 import 'package:carcare/home_screen.dart';
+import 'package:carcare/login_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'flutter flow/flutter_flow_util.dart';
@@ -63,11 +64,20 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Image.asset(
-                        'assets/images/Back.png',
-                        width: 23,
-                        height: 14,
-                        fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreenWidget()),
+                          );
+                        },
+                        child: Image.asset(
+                          'assets/images/Back.png',
+                          width: 23,
+                          height: 14,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ],
                   ),

@@ -1,3 +1,4 @@
+import 'package:carcare/promotion_screen.dart';
 import 'package:flutter/material.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
@@ -49,11 +50,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                     children: [
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(270, 0, 0, 0),
-                        child: Image.asset(
-                          'assets/images/Home_Screen/Profile.png',
-                          width: 50,
-                          height: 50,
-                          fit: BoxFit.contain,
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Image.asset(
+                            'assets/images/Home_Screen/Profile.png',
+                            width: 50,
+                            height: 50,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ],
@@ -143,37 +147,41 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   32, 0, 0, 0),
-                                          child: Container(
-                                            width: 113,
-                                            height: 113,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFFFBFDFF),
-                                              borderRadius:
-                                                  BorderRadius.circular(15),
-                                              border: Border.all(
-                                                color: Color(0x6E959393),
+                                          child: GestureDetector(
+                                            onTap: () {},
+                                            child: Container(
+                                              width: 113,
+                                              height: 113,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFFBFDFF),
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                                border: Border.all(
+                                                  color: Color(0x6E959393),
+                                                ),
                                               ),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 10, 10, 10),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Image.asset(
-                                                    'assets/images/Home_Screen/Car.png',
-                                                    width: 47,
-                                                    height: 47,
-                                                    fit: BoxFit.contain,
-                                                  ),
-                                                  Text(
-                                                    'ข้อมูลรถ',
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1,
-                                                  ),
-                                                ],
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(10, 10, 10, 10),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Image.asset(
+                                                      'assets/images/Home_Screen/Car.png',
+                                                      width: 47,
+                                                      height: 47,
+                                                      fit: BoxFit.contain,
+                                                    ),
+                                                    Text(
+                                                      'ข้อมูลรถ',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -182,39 +190,43 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   30, 0, 0, 0),
-                                          child: Container(
-                                            width: 113,
-                                            height: 113,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFFFBFDFF),
-                                              borderRadius:
-                                                  BorderRadius.circular(15),
-                                              border: Border.all(
-                                                color: Color(0x6E959393),
+                                          child: GestureDetector(
+                                            onTap: () {},
+                                            child: Container(
+                                              width: 113,
+                                              height: 113,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFFBFDFF),
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                                border: Border.all(
+                                                  color: Color(0x6E959393),
+                                                ),
                                               ),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 10, 10, 10),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Image.asset(
-                                                    'assets/images/Home_Screen/Home.png',
-                                                    width: 47,
-                                                    height: 47,
-                                                    fit: BoxFit.contain,
-                                                  ),
-                                                  Text(
-                                                    'ศูนย์บริการ',
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1,
-                                                  ),
-                                                ],
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(10, 10, 10, 10),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    Image.asset(
+                                                      'assets/images/Home_Screen/Home.png',
+                                                      width: 47,
+                                                      height: 47,
+                                                      fit: BoxFit.contain,
+                                                    ),
+                                                    Text(
+                                                      'ศูนย์บริการ',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -232,37 +244,48 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   32, 0, 0, 0),
-                                          child: Container(
-                                            width: 113,
-                                            height: 113,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFFFBFDFF),
-                                              borderRadius:
-                                                  BorderRadius.circular(15),
-                                              border: Border.all(
-                                                color: Color(0x6E959393),
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        PromotionScreenWidget()),
+                                              );
+                                            },
+                                            child: Container(
+                                              width: 113,
+                                              height: 113,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFFBFDFF),
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                                border: Border.all(
+                                                  color: Color(0x6E959393),
+                                                ),
                                               ),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 10, 10, 10),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Image.asset(
-                                                    'assets/images/Home_Screen/Ticket.png',
-                                                    width: 47,
-                                                    height: 47,
-                                                    fit: BoxFit.contain,
-                                                  ),
-                                                  Text(
-                                                    'โปรโมชั่น',
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1,
-                                                  ),
-                                                ],
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(10, 10, 10, 10),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Image.asset(
+                                                      'assets/images/Home_Screen/Ticket.png',
+                                                      width: 47,
+                                                      height: 47,
+                                                      fit: BoxFit.contain,
+                                                    ),
+                                                    Text(
+                                                      'โปรโมชั่น',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           ),

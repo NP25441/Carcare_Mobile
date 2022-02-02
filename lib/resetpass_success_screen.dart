@@ -64,30 +64,22 @@ class _PassSuccessScreenWidgetState extends State<PassSuccessScreenWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      FFButtonWidget(
-                        onPressed: () {
+                      GestureDetector(
+                        onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => HomeScreenWidget()),
                           );
                         },
-                        text: 'แตะหน้าจอเพื่อดำเนินการต่อ',
-                        options: FFButtonOptions(
-                          width: 220,
-                          height: 30,
-                          color: Colors.transparent,
-                          textStyle: FlutterFlowTheme.subtitle2.override(
+                        child: Text(
+                          'แตะหน้าจอเพื่อดำเนินการต่อ',
+                          style: FlutterFlowTheme.subtitle1.override(
                             fontFamily: 'Roboto',
                             color: Color(0xFFB0B4BD),
                           ),
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1,
-                          ),
-                          borderRadius: 12,
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),

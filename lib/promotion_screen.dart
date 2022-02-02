@@ -1,3 +1,6 @@
+import 'package:carcare/detel_promption_screen.dart';
+import 'package:carcare/home_screen.dart';
+import 'package:carcare/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
@@ -40,11 +43,30 @@ class _PromotionScreenWidgetState extends State<PromotionScreenWidget> {
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Image.asset(
-                            'assets/images/Back.png',
-                            width: 23,
-                            height: 14,
-                            fit: BoxFit.cover,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        DetelProScreenWidget()),
+                              );
+                            },
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomeScreenWidget()),
+                                );
+                              },
+                              child: Image.asset(
+                                'assets/images/Back.png',
+                                width: 23,
+                                height: 14,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ],
                       ),

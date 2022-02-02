@@ -1,3 +1,4 @@
+import 'package:carcare/login_screen.dart';
 import 'package:carcare/resetpass_success_screen.dart';
 import 'package:flutter/material.dart';
 import '../flutter flow/flutter_flow_util.dart';
@@ -46,11 +47,20 @@ class _PassScreenWidgetState extends State<PassScreenWidget> {
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Image.asset(
-                        'assets/images/Back.png',
-                        width: 23,
-                        height: 14,
-                        fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreenWidget()),
+                          );
+                        },
+                        child: Image.asset(
+                          'assets/images/Back.png',
+                          width: 23,
+                          height: 14,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ],
                   ),
@@ -146,11 +156,14 @@ class _PassScreenWidgetState extends State<PassScreenWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FFButtonWidget(
-                        onPressed: () {Navigator.push(
+                        onPressed: () {
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => PassSuccessScreenWidget()),
-                          );},
+                                builder: (context) =>
+                                    PassSuccessScreenWidget()),
+                          );
+                        },
                         text: 'ส่งไปยัง email',
                         options: FFButtonOptions(
                           width: 178,
