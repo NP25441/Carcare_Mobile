@@ -36,3 +36,12 @@ test
 - สร้างฟังก์ชัน pageViewController ในหน้า Detel Promotion Screen
 - เชื่อมปุ่ม Back ของหน้า Detel Promotion Screen กับ Promotion Screen
 - แก้บัคกดปุ่มในส่วนของ Listview ในหน้า Promotion Screen
+
+3.4
+- ปรับ UX/UI หน้า Login Screen ใหม่ 
+- เพิ่มรูปสำหรับใช้หน้า Login Screen
+- เพิ่ม ปุ่ม Login Google ในหน้า Login Screen
+- ปรับฟ้อนต์ ภาษาไทย ทั้งหมดทุกหน้าให้ใช้ฟ้อนต์ Prompt
+- ปรับฟ้อนต์ ภาษาอังกฤษ ทั้งหมดให้ใช้ฟ้อนต์ Work Sans
+- แก้บัคฟ้อนต์และปรับรูปแบบขนาดตัวอักษรใหม่
+- แก้บัคตัวหนังสือในปุ่มกด
