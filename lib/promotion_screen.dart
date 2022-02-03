@@ -1,6 +1,5 @@
 import 'package:carcare/detel_promption_screen.dart';
 import 'package:carcare/home_screen.dart';
-import 'package:carcare/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
@@ -112,68 +111,32 @@ class _PromotionScreenWidgetState extends State<PromotionScreenWidget> {
                         decoration: BoxDecoration(
                           color: Color(0x00FFFFFF),
                         ),
-                        child: ListView(
-                          padding: EdgeInsets.zero,
-                          scrollDirection: Axis.vertical,
-                          children: [
-                            Container(
-                              width: 332,
-                              height: 139,
-                              decoration: BoxDecoration(
-                                color: Color(0xFF5E92FF),
-                                borderRadius: BorderRadius.circular(26),
-                              ),
-                            ),
+                        child: ListView.builder(itemBuilder: (_, i) {
+                          return Column(children: [
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                              child: Container(
-                                width: 332,
-                                height: 139,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF5E92FF),
-                                  borderRadius: BorderRadius.circular(26),
+                              child: InkWell(
+                                onTap: () async {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            DetelProScreenWidget()),
+                                  );
+                                },
+                                child: Container(
+                                  width: 332,
+                                  height: 139,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF5E92FF),
+                                    borderRadius: BorderRadius.circular(26),
+                                  ),
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                              child: Container(
-                                width: 332,
-                                height: 139,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF5E92FF),
-                                  borderRadius: BorderRadius.circular(26),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                              child: Container(
-                                width: 332,
-                                height: 139,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF5E92FF),
-                                  borderRadius: BorderRadius.circular(26),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                              child: Container(
-                                width: 332,
-                                height: 139,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF5E92FF),
-                                  borderRadius: BorderRadius.circular(26),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                          ]);
+                        }),
                       ),
                     ),
                   ],

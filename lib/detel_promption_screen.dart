@@ -14,7 +14,7 @@ class DetelProScreenWidget extends StatefulWidget {
 }
 
 class _DetelProScreenWidgetState extends State<DetelProScreenWidget> {
-  late PageController pageViewController;
+  PageController? pageViewController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -97,6 +97,51 @@ class _DetelProScreenWidgetState extends State<DetelProScreenWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                       child: Container(
                         width: 332,
+                        height: 530,
+                        decoration: BoxDecoration(
+                          color: Color(0x005E92FF),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                            color: Color(0xFF5E92FF),
+                            width: 2,
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 195, 0, 0),
+                              child: Text(
+                                'โปรแลกแต้มแจกของ',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Roboto',
+                                  color: Color(0xFF5E92FF),
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 270, 0, 0),
+                              child: Text(
+                                'ระยะเวลาโปรโมชัน :  1 มก. - 31 สค.',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'Roboto',
+                                  color: Color(0x735E92FF),
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                      child: Container(
+                        width: 332,
                         height: 178,
                         decoration: BoxDecoration(
                           color: Color(0xFF5E92FF),
@@ -108,7 +153,8 @@ class _DetelProScreenWidgetState extends State<DetelProScreenWidget> {
                           child: Stack(
                             children: [
                               PageView(
-                                controller: pageViewController,
+                                controller: pageViewController ??=
+                                    PageController(initialPage: 0),
                                 scrollDirection: Axis.horizontal,
                                 children: [
                                   ClipRRect(
@@ -155,11 +201,12 @@ class _DetelProScreenWidgetState extends State<DetelProScreenWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 0, 0, 10),
                                   child: SmoothPageIndicator(
-                                    controller: pageViewController,
+                                    controller: pageViewController ??=
+                                        PageController(initialPage: 0),
                                     count: 4,
                                     axisDirection: Axis.horizontal,
                                     onDotClicked: (i) {
-                                      pageViewController.animateToPage(
+                                      pageViewController?.animateToPage(
                                         i,
                                         duration: Duration(milliseconds: 500),
                                         curve: Curves.ease,
@@ -180,51 +227,6 @@ class _DetelProScreenWidgetState extends State<DetelProScreenWidget> {
                               ),
                             ],
                           ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                      child: Container(
-                        width: 332,
-                        height: 530,
-                        decoration: BoxDecoration(
-                          color: Color(0x005E92FF),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                            color: Color(0xFF5E92FF),
-                            width: 2,
-                          ),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 195, 0, 0),
-                              child: Text(
-                                'โปรแลกแต้มแจกของ',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Roboto',
-                                  color: Color(0xFF5E92FF),
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 270, 0, 0),
-                              child: Text(
-                                'ระยะเวลาโปรโมชัน :  1 มก. - 31 สค.',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Roboto',
-                                  color: Color(0x735E92FF),
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ],
                         ),
                       ),
                     ),
