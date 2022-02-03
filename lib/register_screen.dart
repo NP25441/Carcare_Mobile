@@ -87,10 +87,10 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                   child: Text(
                     'Create account',
                     style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Rubik',
+                      fontFamily: 'Work Sans',
                       color: Color(0xFF5E92FF),
                       fontSize: 30,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -98,7 +98,7 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                 Text(
                   'มาเริ่มสร้างบัญชีของคุณกัน!',
                   style: FlutterFlowTheme.bodyText1.override(
-                    fontFamily: 'Red Hat Display',
+                    fontFamily: 'Prompt',
                     color: Color(0xFFB0B4BD),
                     fontSize: 18,
                   ),
@@ -118,14 +118,14 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                             decoration: InputDecoration(
                               labelText: 'ชื่อจริง',
                               labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Prompt',
                                 color: Color(0xFF95A1AC),
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
                               ),
-                              hintText: 'Enter your name here...',
+                              hintText: 'Enter Your Name',
                               hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Prompt',
                                 color: Color(0xFF95A1AC),
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
@@ -155,7 +155,7 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                               ),
                             ),
                             style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Roboto',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF2B343A),
                               fontSize: 15,
                               fontWeight: FontWeight.normal,
@@ -179,14 +179,14 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                           decoration: InputDecoration(
                             labelText: 'นามสกุล',
                             labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                            hintText: 'Enter your name here...',
+                            hintText: 'Enter Your Surenames ',
                             hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -216,7 +216,7 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                             ),
                           ),
                           style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Prompt',
                             color: Color(0xFF2B343A),
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
@@ -239,14 +239,14 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                           decoration: InputDecoration(
                             labelText: 'ชื่อแอคเคาท์',
                             labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                            hintText: 'Enter your email here...',
+                            hintText: 'Enter Your Accout',
                             hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -276,7 +276,7 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                             ),
                           ),
                           style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Prompt',
                             color: Color(0xFF2B343A),
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
@@ -299,14 +299,14 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                           decoration: InputDecoration(
                             labelText: 'อีเมล',
                             labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                            hintText: 'Enter your email here...',
+                            hintText: 'Enter Your E-mail',
                             hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -336,7 +336,7 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                             ),
                           ),
                           style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Prompt',
                             color: Color(0xFF2B343A),
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
@@ -359,14 +359,14 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                           decoration: InputDecoration(
                             labelText: 'เบอร์โทรศัพท์',
                             labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                            hintText: 'Enter your name here...',
+                            hintText: 'Enter Your Phone',
                             hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -396,7 +396,7 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                             ),
                           ),
                           style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Prompt',
                             color: Color(0xFF2B343A),
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
@@ -419,14 +419,14 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                           decoration: InputDecoration(
                             labelText: 'รหัสผ่าน',
                             labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                            hintText: 'Enter your name here...',
+                            hintText: 'Enter Your Password',
                             hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -469,7 +469,7 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                             ),
                           ),
                           style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Prompt',
                             color: Color(0xFF2B343A),
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
@@ -492,14 +492,14 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                           decoration: InputDecoration(
                             labelText: 'ยืนยันรหัสผ่าน',
                             labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
-                            hintText: 'Enter your name here...',
+                            hintText: 'Enter Your Password',
                             hintStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lexend Deca',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF95A1AC),
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -542,7 +542,7 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                             ),
                           ),
                           style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Prompt',
                             color: Color(0xFF2B343A),
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
@@ -566,23 +566,24 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                                 builder: (context) => HomeScreenWidget()),
                           );
                         },
-                        text: 'ยืนยันการสมัครสมาชิก',
+                        text: '   ยืนยันการสมัครสมาชิก',
                         options: FFButtonOptions(
                           width: 178,
                           height: 39,
                           color: Color(0xFF5E92FF),
                           textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Prompt',
                             color: Colors.white,
                             fontSize: 16,
                           ),
+                          elevation: 3,
                           borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1,
                           ),
-                          borderRadius: 20,
+                          borderRadius: 50,
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),

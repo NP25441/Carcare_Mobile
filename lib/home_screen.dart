@@ -101,7 +101,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       'เรามาดูแลรถยนต์ของคุณกันเถอะ',
                                       style:
                                           FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Roboto',
+                                        fontFamily: 'Prompt',
                                         color: Color(0xFFB0B4BD),
                                         fontSize: 16,
                                       ),

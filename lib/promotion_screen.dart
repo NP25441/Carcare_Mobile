@@ -82,7 +82,7 @@ class _PromotionScreenWidgetState extends State<PromotionScreenWidget> {
                               child: Text(
                                 'โปรโมชัน',
                                 style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Roboto',
+                                  fontFamily: 'Prompt',
                                   color: Color(0xFF5E92FF),
                                   fontSize: 36,
                                   fontWeight: FontWeight.w600,
@@ -93,7 +93,7 @@ class _PromotionScreenWidgetState extends State<PromotionScreenWidget> {
                             Text(
                               'สุดคุ้ม กับโปรประจำเดือน',
                               style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Prompt',
                                 color: Color(0xFFB0B4BD),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w300,

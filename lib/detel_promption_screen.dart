@@ -70,7 +70,7 @@ class _DetelProScreenWidgetState extends State<DetelProScreenWidget> {
                           child: Text(
                             'โปรโมชัน',
                             style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Roboto',
+                              fontFamily: 'Prompt',
                               color: Color(0xFF5E92FF),
                               fontSize: 36,
                               fontWeight: FontWeight.w600,
@@ -81,7 +81,7 @@ class _DetelProScreenWidgetState extends State<DetelProScreenWidget> {
                         Text(
                           'สุดคุ้ม กับโปรประจำเดือน',
                           style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Prompt',
                             color: Color(0xFFB0B4BD),
                             fontSize: 16,
                             fontWeight: FontWeight.w300,
@@ -115,7 +115,7 @@ class _DetelProScreenWidgetState extends State<DetelProScreenWidget> {
                               child: Text(
                                 'โปรแลกแต้มแจกของ',
                                 style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Roboto',
+                                  fontFamily: 'Prompt',
                                   color: Color(0xFF5E92FF),
                                   fontSize: 25,
                                   fontWeight: FontWeight.w600,
@@ -128,9 +128,9 @@ class _DetelProScreenWidgetState extends State<DetelProScreenWidget> {
                               child: Text(
                                 'ระยะเวลาโปรโมชัน :  1 มก. - 31 สค.',
                                 style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Roboto',
+                                  fontFamily: 'Prompt',
                                   color: Color(0x735E92FF),
-                                  fontSize: 16,
+                                  fontSize: 14,
                                 ),
                               ),
                             ),

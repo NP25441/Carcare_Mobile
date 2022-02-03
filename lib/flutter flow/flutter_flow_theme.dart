@@ -41,7 +41,7 @@ class FlutterFlowTheme {
         fontSize: 16,
       );
   static TextStyle get bodyText1 => GoogleFonts.getFont(
-        'Poppins',
+        'Prompt',
         color: const Color(0xFF303030),
         fontWeight: FontWeight.normal,
         fontSize: 14,

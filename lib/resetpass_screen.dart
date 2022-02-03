@@ -70,7 +70,7 @@ class _PassScreenWidgetState extends State<PassScreenWidget> {
                   child: Text(
                     'ลืมรหัสผ่าน',
                     style: FlutterFlowTheme.subtitle1.override(
-                      fontFamily: 'Roboto',
+                      fontFamily: 'Prompt',
                       color: Color(0xBACD5E92FF),
                       fontSize: 48,
                       fontStyle: FontStyle.italic,
@@ -82,7 +82,7 @@ class _PassScreenWidgetState extends State<PassScreenWidget> {
                   child: Text(
                     'กรุณากรอกอีเมลเพื่อส่งส่งข้อความสำหรับรีเซ็ตรหัสผ่าน',
                     style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Roboto',
+                      fontFamily: 'Prompt',
                       color: Color(0xFFB0B4BD),
                       fontSize: 15,
                     ),
@@ -103,14 +103,14 @@ class _PassScreenWidgetState extends State<PassScreenWidget> {
                             decoration: InputDecoration(
                               labelText: 'Goodboy0012@gmail.com',
                               labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Prompt',
                                 color: Color(0xFF95A1AC),
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
                               ),
-                              hintText: 'Enter your name here...',
+                              hintText: 'Enter Your E-mail',
                               hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Prompt',
                                 color: Color(0xFF95A1AC),
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
@@ -140,7 +140,7 @@ class _PassScreenWidgetState extends State<PassScreenWidget> {
                               ),
                             ),
                             style: GoogleFonts.getFont(
-                              'Roboto',
+                              'Prompt',
                               fontSize: 16,
                             ),
                           ),
@@ -170,7 +170,7 @@ class _PassScreenWidgetState extends State<PassScreenWidget> {
                           height: 39,
                           color: Color(0xFF5E92FF),
                           textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Prompt',
                             color: Colors.white,
                             fontSize: 16,
                           ),

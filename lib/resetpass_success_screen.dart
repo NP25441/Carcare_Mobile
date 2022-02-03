@@ -38,11 +38,11 @@ class _PassSuccessScreenWidgetState extends State<PassSuccessScreenWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 300, 0, 0),
                   child: Text(
-                    'ส่ง email เสร็จสิ้น',
+                    'ส่ง E-mail เสร็จสิ้น',
                     style: FlutterFlowTheme.subtitle1.override(
-                      fontFamily: 'Roboto',
+                      fontFamily: 'Prompt',
                       color: Color(0xBACD5E92FF),
-                      fontSize: 45,
+                      fontSize: 40,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -52,7 +52,7 @@ class _PassSuccessScreenWidgetState extends State<PassSuccessScreenWidget> {
                   child: Text(
                     'ระบบได้ส่งข้อความ สำหรับรีเซ็ตรหัสผ่าน \nให้คุณแล้ว กรุณารีเซ็ตรหัสผ่านผ่านอีเมล',
                     style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Roboto',
+                      fontFamily: 'Prompt',
                       color: Color(0xFFB0B4BD),
                       fontSize: 18,
                     ),
@@ -75,7 +75,7 @@ class _PassSuccessScreenWidgetState extends State<PassSuccessScreenWidget> {
                         child: Text(
                           'แตะหน้าจอเพื่อดำเนินการต่อ',
                           style: FlutterFlowTheme.subtitle1.override(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'Prompt',
                             color: Color(0xFFB0B4BD),
                           ),
                         ),

@@ -83,7 +83,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                         child: Text(
                           'อีเมลผู้ใช้',
                           style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Inter',
+                            fontFamily: 'Prompt',
                             color: Color(0xFF696F79),
                           ),
                         ),
@@ -109,14 +109,14 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                               decoration: InputDecoration(
                                 labelText: 'Email Address',
                                 labelStyle: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Work Sans',
                                   color: Color(0xFF95A1AC),
                                   fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                 ),
-                                hintText: 'Enter your email here...',
+                                hintText: 'Enter your email',
                                 hintStyle: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'Work Sans',
                                   color: Color(0xFF95A1AC),
                                   fontSize: 14,
                                   fontWeight: FontWeight.normal,
@@ -163,7 +163,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                         child: Text(
                           'รหัสผ่าน',
                           style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Inter',
+                            fontFamily: 'Prompt',
                             color: Color(0xFF696F79),
                           ),
                         ),
@@ -186,14 +186,14 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                             decoration: InputDecoration(
                               labelText: 'Password',
                               labelStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Work Sans',
                                 color: Color(0xFF95A1AC),
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
                               ),
-                              hintText: 'Enter your email here...',
+                              hintText: 'Enter your password',
                               hintStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
+                                fontFamily: 'Work Sans',
                                 color: Color(0xFF95A1AC),
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
@@ -249,32 +249,22 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(220, 0, 0, 0),
-                        child: FFButtonWidget(
-                          onPressed: () {
+                        padding: EdgeInsetsDirectional.fromSTEB(240, 0, 0, 0),
+                        child: GestureDetector(
+                          onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => PassScreenWidget()),
                             );
                           },
-                          text: 'ลืมรหัสผ่าน',
-                          options: FFButtonOptions(
-                            width: 100,
-                            height: 27,
-                            color: Color(0x00FFFFFF),
-                            textStyle: FlutterFlowTheme.subtitle2.override(
-                              fontFamily: 'Inter',
+                          child: Text(
+                            'ลืมรหัสผ่าน',
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Prompt',
                               color: Color(0xFF696F79),
                               fontSize: 16,
-                              fontWeight: FontWeight.normal,
                             ),
-                            elevation: 0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1,
-                            ),
-                            borderRadius: 0,
                           ),
                         ),
                       ),
@@ -297,22 +287,62 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                       height: 41,
                       color: Color(0xFF5E92FF),
                       textStyle: FlutterFlowTheme.subtitle1.override(
-                        fontFamily: 'Lexend Deca',
+                        fontFamily: 'Prompt',
                         color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
                       elevation: 3,
                       borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1,
                       ),
-                      borderRadius: 8,
+                      borderRadius: 50,
                     ),
                   ),
                 ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                      child: Image.asset(
+                        'assets/images/Login_Screen/Line.png',
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(35, 0, 0, 0),
+                      child: Text(
+                        'หรือ',
+                        style: FlutterFlowTheme.bodyText1.override(
+                          fontFamily: 'Prompt',
+                          color: Color(0xFF696F79),
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(35, 0, 0, 0),
+                      child: Image.asset(
+                        'assets/images/Login_Screen/Line.png',
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ],
+                ),
+                Image.asset(
+                  'assets/images/Login_Screen/Google.png',
+                  width: 48,
+                  height: 48,
+                  fit: BoxFit.cover,
+                ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 160, 0, 24),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 24),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -320,37 +350,31 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                       Text(
                         'ไม่มีบัญชี ?',
                         style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Lexend Deca',
+                          fontFamily: 'Prompt',
                           color: Color(0xFFB0B4BD),
                           fontSize: 16,
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                      FFButtonWidget(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => RegisterScreenWidget()),
-                          );
-                        },
-                        text: 'สมัครสมาชิก',
-                        options: FFButtonOptions(
-                          width: 130,
-                          height: 30,
-                          color: Color(0x00FFFFFF),
-                          textStyle: FlutterFlowTheme.subtitle2.override(
-                            fontFamily: 'Lexend Deca',
-                            color: Color(0xFF5E92FF),
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => RegisterScreenWidget()),
+                            );
+                          },
+                          child: Text(
+                            'สมัคสมาชิก',
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Prompt',
+                              color: Color(0xFF5E92FF),
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
-                          elevation: 0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1,
-                          ),
-                          borderRadius: 0,
                         ),
                       ),
                     ],
