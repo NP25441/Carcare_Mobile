@@ -30,3 +30,9 @@ test
 - เชื่อมปุ่ม Back ของหน้า Reset Password Screen กับ Login Screen
 - เชื่อมปุ่ม Back ของหน้า Promotion Screen กับ Home Screen
 - แก้บัคปุ่มหน้า Reset Password Success Screen 
+
+3.3
+- เชื่อม Promotion Screen กับ Detel Promotion Screen
+- สร้างฟังก์ชัน pageViewController ในหน้า Detel Promotion Screen
+- เชื่อมปุ่ม Back ของหน้า Detel Promotion Screen กับ Promotion Screen
+- แก้บัคกดปุ่มในส่วนของ Listview ในหน้า Promotion Screen
