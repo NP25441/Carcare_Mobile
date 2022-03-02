@@ -48,8 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _navigatetologin_screen() async {
-    await Future.delayed(Duration(milliseconds: 1500),() {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreenWidget()));
+    await Future.delayed(Duration(milliseconds: 1500), () {});
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => LoginScreenWidget()));
   }
 
   @override

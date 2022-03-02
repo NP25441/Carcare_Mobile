@@ -40,6 +40,7 @@ dependencies:
   smooth_page_indicator: 1.0.0+2
   timeago: 3.1.0
   url_launcher: 6.0.15
+  http: 0.13.4
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,7 @@ flutter:
     - assets/images/Home_Screen/
     - assets/images/Promotion_Screen/
     - assets/images/Open_Screen/
+    - assets/images/Profile_Screen/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

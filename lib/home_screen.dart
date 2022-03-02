@@ -1,3 +1,4 @@
+import 'package:carcare/profile_screen.dart';
 import 'package:carcare/promotion_screen.dart';
 import 'package:flutter/material.dart';
 import 'flutter flow/flutter_flow_util.dart';
@@ -51,7 +52,13 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(270, 0, 0, 0),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ProfileScreenWidget()),
+                                );
+                              },
                           child: Image.asset(
                             'assets/images/Home_Screen/Profile.png',
                             width: 50,
