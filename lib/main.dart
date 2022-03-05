@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
 import 'flutter flow/flutter_flow_theme.dart';
@@ -40,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+  
 
   @override
   void initState() {
@@ -48,13 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _navigatetologin_screen() async {
-    await Future.delayed(Duration(milliseconds: 1500), () {});
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => LoginScreenWidget()));
+    await Future.delayed(Duration(milliseconds: 1500),() {});
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreenWidget()));
   }
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       backgroundColor: Color(0xFF1E2429),
       body: Container(

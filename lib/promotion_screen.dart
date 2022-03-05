@@ -1,11 +1,15 @@
 import 'package:carcare/detel_promption_screen.dart';
 import 'package:carcare/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
 import 'flutter flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+import 'assets.dart';
+import 'models/promotion_model.dart';
 
 class PromotionScreenWidget extends StatefulWidget {
   const PromotionScreenWidget({Key? key}) : super(key: key);
@@ -16,6 +20,45 @@ class PromotionScreenWidget extends StatefulWidget {
 
 class _PromotionScreenWidgetState extends State<PromotionScreenWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  late Promotion promotion = Promotion();
+  final List<Promotion> promotions = [];
+  getToken() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString("auth_token");
+    return token;
+  }
+
+  fetchPromotion() async {
+    setState(() {
+      promotions.clear();
+    });
+
+    final token = await getToken();
+    // error เมื่อ logout บ่อยๆ
+    final res = await http.get(
+      Uri.parse("$url/promotion"),
+      headers: {
+        "Accept": "application/json",
+        "Access-Control_Allow_Origin": "*",
+        "Authorization": "Bearer $token"
+      },
+    );
+
+    final data = convert.jsonDecode(res.body) as List<dynamic>;
+    for (var book in data) {
+      final _book = Promotion.fromJSON(book as Map<String, dynamic>);
+      setState(() {
+        promotions.add(_book);
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    fetchPromotion();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -112,32 +155,42 @@ class _PromotionScreenWidgetState extends State<PromotionScreenWidget> {
                         decoration: BoxDecoration(
                           color: Color(0x00FFFFFF),
                         ),
-                        child: ListView.builder(itemBuilder: (_, i) {
-                          return Column(children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                              child: InkWell(
-                                onTap: () async {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            DetelProScreenWidget()),
-                                  );
-                                },
-                                child: Container(
-                                  width: 332,
-                                  height: 139,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFF5E92FF),
-                                    borderRadius: BorderRadius.circular(26),
+                        child: Column(
+                          children: [
+                            for (var promotion1 in promotions)
+                              Column(children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 20, 0, 0),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DetelProScreenWidget()),
+                                      );
+                                    },
+                                    child: Container(
+                                      width: 332,
+                                      height: 139,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFF5E92FF),
+                                        borderRadius: BorderRadius.circular(26),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Text("${promotion1.title}"),
+                                          
+                                        ],
+                                        
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                          ]);
-                        }),
+                              ])
+                          ],
+                        ),
                       ),
                     ),
                   ],

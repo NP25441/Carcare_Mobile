@@ -2,11 +2,14 @@ import 'package:carcare/home_screen.dart';
 import 'package:carcare/login_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
 import 'flutter flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+import 'assets.dart';
 
 class RegisterScreenWidget extends StatefulWidget {
   const RegisterScreenWidget({Key? key}) : super(key: key);
@@ -26,18 +29,55 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
   late TextEditingController emailAddressController5;
   late bool emailAddressVisibility2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  submit() async {
+    final res = await http.post(
+      Uri.parse("$url/register"),
+      headers: {
+        "Accept": "application/json",
+        'content-type': 'application/json',
+        "Access-Control_Allow_Origin": "*"
+      },
+      body: convert.jsonEncode({
+        "fname": emailAddressController1.text,
+        "lname": emailAddressController2.text,
+        "account": passwordController1.text,
+        "tel": emailAddressController3.text,
+        "email": passwordController2.text,
+        "password": emailAddressController4.text,
+      }),
+    );
+    print(res.statusCode);
+    if (res.statusCode != 200) {
+      showDialog(
+        context: context,
+        builder: (context) => SimpleDialog(
+          children: [
+            Center(
+              child: Text("Username already exist"),
+            )
+          ],
+        ),
+      );
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LoginScreenWidget()),
+      );
+    }
+  }
 
   @override
   void initState() {
     super.initState();
-    emailAddressController1 = TextEditingController();
-    emailAddressController2 = TextEditingController();
-    passwordController1 = TextEditingController();
-    passwordController2 = TextEditingController();
-    emailAddressController3 = TextEditingController();
-    emailAddressController4 = TextEditingController();
+    emailAddressController1 = TextEditingController(text: "nammarin");
+    emailAddressController2 = TextEditingController(text: "tepin");
+    passwordController1 = TextEditingController(text: "ซ่อมรถจำกัด");
+    passwordController2 =
+        TextEditingController(text: "boatbot.seven@gmail.com");
+    emailAddressController3 = TextEditingController(text: "0981311077");
+    emailAddressController4 = TextEditingController(text: "1234567890");
     emailAddressVisibility1 = false;
-    emailAddressController5 = TextEditingController();
+    emailAddressController5 = TextEditingController(text: "1234567890");
     emailAddressVisibility2 = false;
   }
 
@@ -560,13 +600,7 @@ class _RegisterScreenWidgetState extends State<RegisterScreenWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       FFButtonWidget(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeScreenWidget()),
-                          );
-                        },
+                        onPressed: submit,
                         text: '   ยืนยันการสมัครสมาชิก',
                         options: FFButtonOptions(
                           width: 178,

@@ -1,10 +1,16 @@
-import 'package:carcare/profile_screen.dart';
+import 'package:carcare/login_screen.dart';
 import 'package:carcare/promotion_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
 import 'flutter flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+import 'assets.dart';
+import 'models/user_model.dart';
+import 'profile_screen.dart';
 
 class HomeScreenWidget extends StatefulWidget {
   const HomeScreenWidget({Key? key}) : super(key: key);
@@ -15,12 +21,73 @@ class HomeScreenWidget extends StatefulWidget {
 
 class _HomeScreenWidgetState extends State<HomeScreenWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  late User user = User();
+  fetchProfile() async {
+    final token = await getToken();
+    final res = await http.get(
+      Uri.parse("$url/profile"),
+      headers: {
+        "Accept": "application/json",
+        "Access-Control_Allow_Origin": "*",
+        "Authorization": "Bearer $token"
+      },
+    );
+    final data = convert.jsonDecode(res.body) as Map<String, dynamic>;
+    setState(() {
+      user = User.fromJSON(data);
+    });
+    print('${user.email}');
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    await prefs.setString("fname", "${user.fname}");
+    await prefs.setString("lname", "${user.lname}");
+    await prefs.setString("account", "${user.account}");
+    await prefs.setString("tel", "${user.tel}");
+    await prefs.setString("email", "${user.email}");
+    await prefs.setString("actor", "${user.actor}");
+  }
+
+  getToken() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString("auth_token");
+    return token;
+  }
+
+  logout() async {
+    final token = await getToken();
+    await http.delete(
+      Uri.parse("$url/logout"),
+      headers: {
+        'content-type': 'application/json',
+        "Authorization": "Bearer $token"
+      },
+    );
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.remove("auth_token");
+
+    print("token end = $token");
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => LoginScreenWidget()),
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchProfile();
+    // ไม่ออก
+    print("user frist name${user.fname}");
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.white,
+      
       body: Stack(
         children: [
           Align(
@@ -52,13 +119,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(270, 0, 0, 0),
                         child: GestureDetector(
-                          onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ProfileScreenWidget()),
-                                );
-                              },
+                          onTap: () {},
                           child: Image.asset(
                             'assets/images/Home_Screen/Profile.png',
                             width: 50,
@@ -293,6 +354,74 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     ),
                                                   ],
                                                 ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  32, 0, 0, 0),
+                                          child: GestureDetector(
+                                            onTap: () async {
+                                              SharedPreferences prefs =
+                                                  await SharedPreferences
+                                                      .getInstance();
+
+                                              final String? fname =
+                                                  prefs.getString('fname');
+                                              final String? lname =
+                                                  prefs.getString('lname');
+                                              final String? account =
+                                                  prefs.getString('account');
+                                              final String? tel =
+                                                  prefs.getString('tel');
+                                              final String? email =
+                                                  prefs.getString('email');
+                                              final String? actor =
+                                                  prefs.getString('actor');
+                                              await Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      ProfileScreenWidget(
+                                                          fname: fname,
+                                                          lname: lname,
+                                                          account: account,
+                                                          tel: tel,
+                                                          email: email,
+                                                          actor: actor),
+                                                ),
+                                              );
+                                            },
+                                            child: Container(
+                                              width: 113,
+                                              height: 113,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFFBFDFF),
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                                border: Border.all(
+                                                  color: Color(0x6E959393),
+                                                ),
+                                              ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset(
+                                                    'assets/images/bg_profile.png',
+                                                    width: 47,
+                                                    height: 47,
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                  Text(
+                                                    'โปรไฟล์',
+                                                    style: FlutterFlowTheme
+                                                        .bodyText1,
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           ),

@@ -1,16 +1,25 @@
 import 'package:carcare/register_screen.dart';
 import 'package:carcare/resetpass_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter flow/flutter_flow_util.dart';
 import 'flutter flow/flutter_flow_widgets.dart';
 import 'flutter flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:http/http.dart';
-
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+import 'assets.dart';
 import 'home_screen.dart';
 
 class LoginScreenWidget extends StatefulWidget {
-  const LoginScreenWidget({Key? key}) : super(key: key);
+  final fname;
+  final lname;
+  final account;
+  final tel;
+  final email;
+  final actor;
+  const LoginScreenWidget({Key? key, this.fname, this.lname, this.account, this.tel, this.email, this.actor})
+      : super(key: key);
 
   @override
   _LoginScreenWidgetState createState() => _LoginScreenWidgetState();
@@ -21,12 +30,56 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
   late TextEditingController passwordController;
   late bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  submit() async {
+    final res = await http.post(
+      Uri.parse("$url/login"),
+      headers: {
+        "Accept": "application/json",
+        'content-type': 'application/json',
+        "Access-Control_Allow_Origin": "*"
+      },
+      body: convert.jsonEncode({
+        "email": emailAddressController.text,
+        "password": passwordController.text,
+      }),
+    );
+
+    print(res.statusCode);
+    if (res.statusCode != 200) {
+      showDialog(
+        context: context,
+        builder: (context) => SimpleDialog(
+          children: [
+            Center(
+              child: Text("Incorrect username or password"),
+            )
+          ],
+        ),
+      );
+    } else {
+      final data = convert.jsonDecode(res.body);
+      print("data = $data");
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String token = data["token"];
+      print("token = $token");
+      await prefs.setString("auth_token", token);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreenWidget()),
+      );
+    }
+
+    // final data = convert.jsonDecode(res.body);
+    // print('data = $data');
+  }
 
   @override
   void initState() {
     super.initState();
-    emailAddressController = TextEditingController();
-    passwordController = TextEditingController();
+    emailAddressController =
+        TextEditingController(text: "boatbot.seven@gmail.com");
+    passwordController = TextEditingController(text: "1234567890");
     passwordVisibility = false;
   }
 
@@ -275,13 +328,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: FFButtonWidget(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomeScreenWidget()),
-                      );
-                    },
+                    onPressed: submit,
                     text: 'เข้าสู่ระบบ',
                     options: FFButtonOptions(
                       width: 250,
@@ -381,6 +428,18 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                     ],
                   ),
                 ),
+                ElevatedButton(
+                    onPressed: () async {
+                      try {
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        final String? action = prefs.getString('auth_token');
+                        print('$action');
+                      } catch (e) {
+                        print('error');
+                      }
+                    },
+                    child: Text('token'))
               ],
             ),
           ),
